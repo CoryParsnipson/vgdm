@@ -20,6 +20,8 @@ func get_input():
 
 func _physics_process(delta):
 	get_input()
+	# This fix brought to you by: https://github.com/godotengine/godot/issues/18433
+	# The comment at the bottom by manglemix works and is used below.
 	var pos = transform.origin
 	var collision_info = move_and_collide(velocity * delta)
 	if (collision_info):
